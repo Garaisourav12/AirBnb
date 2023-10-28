@@ -84,7 +84,7 @@ document.querySelectorAll('.rate-num').forEach(e => {
     e.innerText = data.rating?data.rating:'No rating';
 })
 document.querySelectorAll('.rate-value').forEach(e => {
-    e.style.width = `${100*((data.rating?data.rating):0/5)}%`;
+    e.style.width = `${100*((data.rating?data.rating:0)/5)}%`;
 })
 
 document.querySelector('.all-review').innerText = `Show all ${data.reviewsCount} reviews`;
