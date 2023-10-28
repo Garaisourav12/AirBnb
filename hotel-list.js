@@ -158,7 +158,7 @@ function randerHotels(data){
                         <p><span>$${e.price.rate}</span> / night</p>
                         <p>
                             <img src="./Icons/red-star.png" alt="">
-                            ${e.rating} · <u>${e.reviewsCount} reviews</u>
+                            ${e.rating?e.rating:'No rating'} · <u>${e.reviewsCount} reviews</u>
                         </p>
                     </div>
                     <div class="booking-details">
