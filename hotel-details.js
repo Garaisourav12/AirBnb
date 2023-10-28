@@ -12,7 +12,7 @@ console.log(data);
 
 
 document.querySelector('.hotel-name').innerText = data.name;
-document.querySelector('.rating-review>span').innerText = data.rating;
+document.querySelector('.rating-review>span').innerText = data.rating?data.rating:'No rating';
 document.querySelector('.rating-review>u').innerText = data.reviewsCount+" reviews";
 document.querySelector('.rating-review>p>u').innerText = data.address;
 
@@ -26,7 +26,7 @@ document.querySelector('.details-features').innerText = `${data.persons} guests 
 document.querySelector('.right-header>p>span').innerText = '$'+data.price.rate;
 document.querySelector('.right-header>:last-child').innerHTML = `
     <img src="./Icons/red-star.png" alt="">
-    ${data.rating} · <u>${data.reviewsCount} reviews</u>
+    ${data.rating?data.rating:'No rating'} · <u>${data.reviewsCount} reviews</u>
 `;
 
 
@@ -77,14 +77,14 @@ document.querySelector('.total>:last-child').innerText = '$' + (Math.ceil(total*
 
 document.querySelector('.review-head').innerHTML = `
     <img src="./Icons/filled-star.png" alt="">
-    ${data.rating} · ${data.reviewsCount} reviews
+    ${data.rating?data.rating:'No rating'} · ${data.reviewsCount} reviews
 `;
 
 document.querySelectorAll('.rate-num').forEach(e => {
-    e.innerText = data.rating;
+    e.innerText = data.rating?data.rating:'No rating';
 })
 document.querySelectorAll('.rate-value').forEach(e => {
-    e.style.width = `${100*(data.rating/5)}%`;
+    e.style.width = `${100*((data.rating?data.rating):0/5)}%`;
 })
 
 document.querySelector('.all-review').innerText = `Show all ${data.reviewsCount} reviews`;
