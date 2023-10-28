@@ -107,7 +107,7 @@ function randerHotels(data){
                 <div class="hz-line"></div>
                 <div class="hotel-data-3">
                     <div class="rating">
-                        <p>${e.rating}</p>
+                        <p>${e.rating?e.rating:'No rating'}</p>
                         <img src="./Icons/star.png" alt="">
                         <p>(${e.reviewsCount} reviews)</p>
                     </div>
